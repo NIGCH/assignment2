@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Input form</title>
+</head>
+<body>
+    <form action="/form" method="post" th:object="${formDto}" id="input-form">
+        <label for="user-input">Enter value</label><br>
+        <p th:if="${#fields.hasErrors('input')}" th:errors="*{input}" id="errors">Error description</p>
+        <input type="text" th:field="*{input}" id="user-input">
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+</body>
+</html>
